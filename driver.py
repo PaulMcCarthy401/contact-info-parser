@@ -31,8 +31,11 @@ model = promptModel(choices)
 
 with open('example.txt') as file:
 	data = file.read()
+
+	# split each card by double newlines
 	cards = data.split('\n\n')
 	
+	# set up the card parser with a chosen model
 	cardParser = ocrparser.BusinessCardParser(model)
 
 	for card in cards:

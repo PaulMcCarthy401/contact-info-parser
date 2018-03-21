@@ -9,6 +9,13 @@ class ContactInfo:
 		self.emailAddress = emailAddress
 	
 	def __str__(self):
+		"""
+		Format:
+		
+		Name: <name>
+		Phone: <phoneNumber>
+		Email: <emailAddress>
+		"""
 		return "Name: {}\nPhone: {}\nEmail: {}".format(
 			self.name, self.phoneNumber, self.emailAddress
 		)
