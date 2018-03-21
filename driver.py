@@ -37,4 +37,4 @@ with open('example.txt') as file:
 
 	for card in cards:
 		contactInfo = cardParser.getContactInfo(card)
-		print(contactInfo)
+		print(contactInfo, '\n')
