@@ -14,19 +14,19 @@ A business card info parser for arbitrary contact info, built with Python 3 and 
    - [macOS/OS X](https://spacy.io/usage/#source-osx)
    - [Windows](https://spacy.io/usage/#source-windows)
    - Fedora `sudo dnf install python-devel git`
-1. Pull down the Github repo
+2. Pull down the Github repo
 ```
 git clone https://github.com/PaulMcCarthy401/contact-info-parser.git
 ```
-2. Set up a python virtual environment
+3. Set up a python virtual environment
 ```
 python -m venv env
 ```
-3. Switch into python environment
+4. Switch into python environment
    - Windows `env\Scripts\activate`
    - Linux/Mac `source env/bin/activate`
 
-4. Install dependencies
+5. Install dependencies
 ```
 pip install -r requirements.txt
 ```
@@ -40,7 +40,7 @@ can be found [here](https://spacy.io/usage/#source-windows)
 
 Generic installation instructions can be found [here](https://spacy.io/usage/#pip)
 
-5. Choose a model
+6. Choose a model
    - Small:  `python -m spacy download en_core_web_sm`
    - Medium: `python -m spacy download en_core_web_md`
    - Large:  `python -m spacy download en_core_web_lg`
