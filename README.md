@@ -29,9 +29,9 @@ can be found [here](https://spacy.io/usage/#source-windows)
 Generic installation instructions can be found [here](https://spacy.io/usage/#pip)
 
 5. Choose a model
-   - Small:  `python -m spacy download en_core_web_sm
-   - Medium: `python -m spacy download en_core_web_md
-   - Large:  `python -m spacy download en_core_web_lg
+   - Small:  `python -m spacy download en_core_web_sm`
+   - Medium: `python -m spacy download en_core_web_md`
+   - Large:  `python -m spacy download en_core_web_lg`
 
 `en_core_web_md` is recommended as it strikes a balance between accuracy and
 download size. Initial start-up performance and memory usage is also impacted
