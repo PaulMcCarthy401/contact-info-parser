@@ -9,6 +9,8 @@ A business card info parser for arbitrary contact info, built with Python 3 and 
    installation notes.
 
 ## Installation
+The following steps are done via a terminal/command prompt.
+
 1. Install build dependencies
    - [Ubuntu](https://spacy.io/usage/#source-ubuntu)
    - [macOS/OS X](https://spacy.io/usage/#source-osx)
@@ -20,7 +22,7 @@ git clone https://github.com/PaulMcCarthy401/contact-info-parser.git
 ```
 3. Set up a python virtual environment
 ```
-python -m venv env
+python3 -m venv env
 ```
 4. Switch into python environment
    - Windows `env\Scripts\activate`
