@@ -49,6 +49,7 @@ class BusinessCardParser:
 		match = re.search(r'(?:\d{1,3}.*)?\d{3}.*\d{3}.*\d{4}', text)
 		
 		if match:
+			# return the phone number without formatting (only numeric values)
 			return re.sub('[^0-9]', '', match.group())
 		return None
 
@@ -59,6 +60,7 @@ class BusinessCardParser:
 		match = re.search(r'[^\s]*@[^\s]*', text)
 
 		if match:
+			# return the matched email address
 			return match.group()
 		return None
 
