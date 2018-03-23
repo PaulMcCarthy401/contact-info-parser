@@ -16,14 +16,17 @@ The following steps are done via a terminal/command prompt.
    - [macOS/OS X](https://spacy.io/usage/#source-osx)
    - [Windows](https://spacy.io/usage/#source-windows)
    - Fedora `sudo dnf install python-devel git`
+   
 2. Pull down the Github repo
-```
-git clone https://github.com/PaulMcCarthy401/contact-info-parser.git
-```
+   ```
+   git clone https://github.com/PaulMcCarthy401/contact-info-parser.git
+   ```
+
 3. Set up a python virtual environment
-```
-python3 -m venv env
-```
+   ```
+   python3 -m venv env
+   ```
+
 4. Switch into the python environment
    - Windows `env\Scripts\activate`
    - Linux/Mac `source env/bin/activate`
