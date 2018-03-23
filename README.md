@@ -4,9 +4,9 @@ A business card info parser for arbitrary contact info, built with Python 3 and 
 # Requirements
  - Python 3.4+
  - cython build environment
-   Because spaCy requires certain components be built with cython (for speed),
-   some tools must be available before installation. These are linked to in the 
-   installation notes.
+     Because spaCy requires certain components be built with cython (for speed),
+     some tools must be available before installation. These are linked to in the 
+     installation notes.
 
 ## Installation
 The following steps are done via a terminal/command prompt.
@@ -24,7 +24,7 @@ git clone https://github.com/PaulMcCarthy401/contact-info-parser.git
 ```
 python3 -m venv env
 ```
-4. Switch into python environment
+4. Switch into the python environment
    - Windows `env\Scripts\activate`
    - Linux/Mac `source env/bin/activate`
 
@@ -32,15 +32,11 @@ python3 -m venv env
 ```
 pip install -r requirements.txt
 ```
-Note: Before installing dependencies, Windows users will need to install
-a version of the Visual C++ Build Tools and the Windows 10 SDK.
-More info on Windows compiler dependencies due to spaCy
-can be found [here](https://spacy.io/usage/#source-windows)
+**Important**: Ensure that before installing dependencies (step 5) that you
+have completed step 1 (installing build dependencies). This step
+will fail if that step was not completed.
 
-  - Python 3.4  -> Visual Studio 2010
-  - Python 3.5+ -> Visual Studio 2015
-
-Generic installation instructions can be found [here](https://spacy.io/usage/#pip)
+*Generic installation instructions can be found [here](https://spacy.io/usage/#pip)*
 
 6. Choose a model
    - Small:  `python -m spacy download en_core_web_sm`
