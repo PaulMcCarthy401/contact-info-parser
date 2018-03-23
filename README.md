@@ -63,6 +63,26 @@ ease of setup. Java was considered due to it being the native runtime of
 Android, but not chosen because from the scope of the challenge,
 I decided that ease of setup was the main priority.
 
+### Telephone vs. Fax
+The challenge is built such that there is a problem posed between telephone and
+fax numbers. This implementation does attempt to naively exclude fax numbers
+by excluding strings beginning with "Fax". In cases where business cards use
+pictures instead of text to distinguish the two phone numbers, this solution fails.
+
+A better solution could be to allow the user of the app to select which phone number
+is the correct one. This solution could be extended to all info types, because
+the main parser method (getContactInfo) is built to initially find all info matches.
+It would be trivial to modify it such that it returns all of the possible matches
+as a set of key,value pairs instead of a ContactInfo object. This would allow
+outside implementation to choose which match is most appropriate.
+
+### Inaccuracies in en_core_web_sm
+The en_core_web_sm model incorrectly identifies "Software Developer"
+as a name. This is masked by the fact that the true name comes before
+"Software Developer". However, it is shown when viewing all matches.
+
+The only way to correct this is to use a better model, such as en_core_web_md.
+
 ### Licensing
   - spaCy: [The MIT License](https://github.com/explosion/spaCy/blob/master/LICENSE)
   - spaCy models: [CC BY-SA 3.0](https://spacy.io/models/en#en_core_web_sm)
@@ -105,37 +125,40 @@ Select a spacy model:
         2. en_core_web_md
         3. en_core_web_lg
 1
-
 Would you like to time the parsing? (y/n)
 y
-
 How many iterations (higher => more accurate, but slower)
         1. 10
         2. 100
         3. 250
 3
+Show all matches? (i.e., not just first found) (y/n)
+n
+
+Loading model...
 
 =>
 
 Timing, please wait...
-Card parsing took  0.03478322803975199 seconds on average over 250 iterations
+        Card parsing took  0.03341693415785919 seconds on average over 250 iterations
 Name: John Doe
 Phone: 4105551234
 Email: john.doe@entegrasystems.com
 
 Timing, please wait...
-Card parsing took  0.05910010388943931 seconds on average over 250 iterations
+        Card parsing took  0.05683097825850366 seconds on average over 250 iterations
 Name: Jane Doe
 Phone: 4105551234
 Email: Jane.doe@acmetech.com
 
 Timing, please wait...
-Card parsing took  0.0752710326180062 seconds on average over 250 iterations
+        Card parsing took  0.07509000430973443 seconds on average over 250 iterations
 Name: Bob Smith
 Phone: 17035551259
 Email: bsmith@abctech.com
+```
 
-
+```
 >> python3 driver.py
 
 Select a spacy model:
@@ -143,32 +166,34 @@ Select a spacy model:
         2. en_core_web_md
         3. en_core_web_lg
 2
-
 Would you like to time the parsing? (y/n)
 y
-
 How many iterations (higher => more accurate, but slower)
         1. 10
         2. 100
         3. 250
 3
+Show all matches? (i.e., not just first found) (y/n)
+n
+
+Loading model...
 
 =>
 
 Timing, please wait...
-Card parsing took  0.036969736855245926 seconds on average over 250 iterations
+        Card parsing took  0.03542762526974251 seconds on average over 250 iterations
 Name: John Doe
 Phone: 4105551234
 Email: john.doe@entegrasystems.com
 
 Timing, please wait...
-Card parsing took  0.06108018077837952 seconds on average over 250 iterations
+        Card parsing took  0.061214357689521416 seconds on average over 250 iterations
 Name: Jane Doe
 Phone: 4105551234
 Email: Jane.doe@acmetech.com
 
 Timing, please wait...
-Card parsing took  0.07867884898593203 seconds on average over 250 iterations
+        Card parsing took  0.07871967853427034 seconds on average over 250 iterations
 Name: Bob Smith
 Phone: 17035551259
 Email: bsmith@abctech.com
