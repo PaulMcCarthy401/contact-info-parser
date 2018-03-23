@@ -3,8 +3,17 @@ A business card info parser for arbitrary contact info, built with Python 3 and 
 
 # Requirements
  - Python 3.4+
+ - cython build environment
+   Because spaCy requires certain components be built with cython (for speed),
+   some tools must be available before installation. These are linked to in the 
+   installation notes.
 
 ## Installation
+1. Install build dependencies
+   - [Ubuntu](https://spacy.io/usage/#source-ubuntu)
+   - [macOS/OS X](https://spacy.io/usage/#source-osx)
+   - [Windows](https://spacy.io/usage/#source-windows)
+   - Fedora `sudo dnf install python-devel git`
 1. Pull down the Github repo
 ```
 git clone https://github.com/PaulMcCarthy401/contact-info-parser.git
