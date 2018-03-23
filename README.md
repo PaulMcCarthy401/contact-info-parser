@@ -94,9 +94,15 @@ outside implementation to choose which match is most appropriate.
 ### Inaccuracies in en_core_web_sm
 The en_core_web_sm model incorrectly identifies "Software Developer"
 as a name. This is masked by the fact that the true name comes before
-"Software Developer". However, it is shown when viewing all matches.
+"Software Developer" in example.txt. However, it is shown when viewing all matches.
 
 The only way to correct this is to use a better model, such as en_core_web_md.
+
+### Fragility of example.txt
+The extraction of card data in example.txt is simple, it denotes
+single business cards as blocks of text seperated by two newline (\n) characters.
+Because of this, ensure that if `example.txt` is changed, that there are no leading newlines
+at the end of the file. Otherwise, the program will not properly read the file.
 
 ### Licensing
    - spaCy: [The MIT License](https://github.com/explosion/spaCy/blob/master/LICENSE)
