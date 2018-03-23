@@ -1,6 +1,9 @@
 # contact-info-parser
 A business card info parser for arbitrary contact info, built with Python 3 and spaCy.
 
+# Requirements
+ - Python 3.4+
+
 ## Installation
 1. Pull down the Github repo
 ```
@@ -20,7 +23,7 @@ pip install -r requirements.txt
 ```
 Note: Before installing dependencies, Windows users will need to install
 a version of the Visual C++ Build Tools and the Windows 10 SDK.
-More info about compiler dependencies due to spaCy
+More info on Windows compiler dependencies due to spaCy
 can be found [here](https://spacy.io/usage/#source-windows)
 
   - Python 3.4  -> Visual Studio 2010
@@ -47,15 +50,36 @@ has available. en_core_web_sm tends to have false positives,
 but en_core_web_md and en_core_web_lg have 100% accuracy on the example dataset
 (which is only three cards, more data is needed to actually assess the accuracy).
 
-## Example
+## Notes
+### Choice of NLP library
+spaCy was chosen as our NLP as opposed to NLTK or Core NLP due to two
+reasons. First, spaCy is more intuitive to install and implement. Second,
+spaCy is, [from their given benchmarks](https://spacy.io/usage/facts-figures#benchmarks)
+, "the fastest syntactic parser in the world".
+
+### Choice of language
+Python was used for this challenge because of both its simplicity and its
+ease of setup. Java was considered due to it being the native runtime of
+Android, but not chosen because from the scope of the challenge,
+I decided that ease of setup was the main priority.
+
+### Licensing
+  - spaCy: [The MIT License](https://github.com/explosion/spaCy/blob/master/LICENSE)
+  - spaCy models: [CC BY-SA 3.0](https://spacy.io/models/en#en_core_web_sm)
+
+## Examples
+### Simple example
 ```
->> python driver.py
+>> python3 driver.py
 
 Select a spacy model:
         1. en_core_web_sm
         2. en_core_web_md
         3. en_core_web_lg
-2
+1
+
+Would you like to time the parsing? (y/n)
+n
 
 =>
 
@@ -64,10 +88,88 @@ Phone: 4105551234
 Email: john.doe@entegrasystems.com
 
 Name: Jane Doe
-Phone: 4105554321
+Phone: 4105551234
 Email: Jane.doe@acmetech.com
 
 Name: Bob Smith
-Phone: 17035551200
+Phone: 17035551259
+Email: bsmith@abctech.com
+```
+
+### Timed examples
+```
+>> python3 driver.py
+
+Select a spacy model:
+        1. en_core_web_sm
+        2. en_core_web_md
+        3. en_core_web_lg
+1
+
+Would you like to time the parsing? (y/n)
+y
+
+How many iterations (higher => more accurate, but slower)
+        1. 10
+        2. 100
+        3. 250
+3
+
+=>
+
+Timing, please wait...
+Card parsing took  0.03478322803975199 seconds on average over 250 iterations
+Name: John Doe
+Phone: 4105551234
+Email: john.doe@entegrasystems.com
+
+Timing, please wait...
+Card parsing took  0.05910010388943931 seconds on average over 250 iterations
+Name: Jane Doe
+Phone: 4105551234
+Email: Jane.doe@acmetech.com
+
+Timing, please wait...
+Card parsing took  0.0752710326180062 seconds on average over 250 iterations
+Name: Bob Smith
+Phone: 17035551259
+Email: bsmith@abctech.com
+
+
+>> python3 driver.py
+
+Select a spacy model:
+        1. en_core_web_sm
+        2. en_core_web_md
+        3. en_core_web_lg
+2
+
+Would you like to time the parsing? (y/n)
+y
+
+How many iterations (higher => more accurate, but slower)
+        1. 10
+        2. 100
+        3. 250
+3
+
+=>
+
+Timing, please wait...
+Card parsing took  0.036969736855245926 seconds on average over 250 iterations
+Name: John Doe
+Phone: 4105551234
+Email: john.doe@entegrasystems.com
+
+Timing, please wait...
+Card parsing took  0.06108018077837952 seconds on average over 250 iterations
+Name: Jane Doe
+Phone: 4105551234
+Email: Jane.doe@acmetech.com
+
+Timing, please wait...
+Card parsing took  0.07867884898593203 seconds on average over 250 iterations
+Name: Bob Smith
+Phone: 17035551259
 Email: bsmith@abctech.com
 ```
