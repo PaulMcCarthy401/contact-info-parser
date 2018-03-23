@@ -36,8 +36,9 @@ Generic installation instructions can be found [here](https://spacy.io/usage/#pi
 `en_core_web_md` is recommended as it strikes a balance between accuracy and
 download size. Initial start-up performance and memory usage is also impacted
 by your choice of model. For a phone app where accuracy is prioritized, this
-software would be adapted to run on a server where initial start-up cost
+software could be adapted to run on a server where initial start-up cost
 and memory cost would be negligible. (Likely with a much improved model as well)
+Otherwise, a small, specialized model could be generated specifically for names.
 
 ## Accuracy
 Name recognition is only as good as the NER model behind it. That is why `driver.py`
