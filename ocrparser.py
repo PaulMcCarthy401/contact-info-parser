@@ -19,6 +19,22 @@ class ContactInfo:
 		return "Name: {}\nPhone: {}\nEmail: {}".format(
 			self.name, self.phoneNumber, self.emailAddress
 		)
+	
+	def getName(self):
+		"""returns the full name of the
+			individual (eg. John Smith, Susan Malick)"""
+		return self.name
+
+	def getPhoneNumber(self):
+		"""returns the phone number
+			formatted as a sequence of digits"""
+		return self.phoneNumber
+
+	def getEmailAddress(self):
+		"""returns the full name of the
+			individual (eg. John Smith, Susan Malick)"""
+		return self.emailAddress
+
 
 class BusinessCardParser:
 	def __init__(self, model='en_core_web_sm'):
@@ -27,7 +43,7 @@ class BusinessCardParser:
 		except:
 			raise ImportError("Spacy model could not be loaded.")
 	
-	def getName(self, text):
+	def findName(self, text):
 		"""Parse a string and return a NER identified name,
 			or None, if no name was found."""
 
@@ -42,7 +58,7 @@ class BusinessCardParser:
 
 		return None
 
-	def getPhoneNumber(self, text, excludeFax=True):
+	def findPhoneNumber(self, text, excludeFax=True):
 		"""Parse a single card and return a string containing the phone number,
 			or None, if no phone number was found. The phone number will be
 			returned without formatting."""
@@ -74,7 +90,7 @@ class BusinessCardParser:
 		return None
 
 
-	def getEmailAddress(self, text):
+	def findEmailAddress(self, text):
 		"""Parse a string and return a string containing the email address,
 			or None, if no email address was found."""
 
@@ -114,15 +130,15 @@ class BusinessCardParser:
 		# parse through document line by line
 		# and gather possible contact info fragments
 		for line in document.split('\n'):
-			matchedName = self.getName(line)
+			matchedName = self.findName(line)
 			if matchedName:
 				names.append(matchedName)
 
-			matchedPhoneNumber = self.getPhoneNumber(line)
+			matchedPhoneNumber = self.findPhoneNumber(line)
 			if matchedPhoneNumber:
 				phoneNumbers.append(matchedPhoneNumber)
 
-			matchedEmailAddress = self.getEmailAddress(line)
+			matchedEmailAddress = self.findEmailAddress(line)
 			if matchedEmailAddress:
 				emailAddresses.append(matchedEmailAddress)
 		
