@@ -4,6 +4,7 @@ A business card info parser for arbitrary contact info, built with Python 3 and 
 # Requirements
  - Python 3.4+
  - cython build environment
+ 
      Because spaCy requires certain components be built with cython (for speed),
      some tools must be available before installation. These are linked to in the 
      installation notes.
