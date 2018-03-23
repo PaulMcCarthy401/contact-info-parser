@@ -12,11 +12,13 @@ modelChoices = {
 yesOrNoChoices = {'1': 'Yes', '2': 'No'}
 
 model = promptQuestion('\nSelect a spacy model:', modelChoices)
-isTimed = promptBoolean('\nWould you like to time the parsing?')
+isTimed = promptBoolean('Would you like to time the parsing?')
 
 if isTimed:
-	iterations = promptQuestion('\nHow many iterations (higher => more accurate, but slower)',
+	iterations = promptQuestion('How many iterations (higher => more accurate, but slower)',
 		{'1': 10, '2': 100, '3': 250})
+
+isPrintAll = promptBoolean('Show all matches? (i.e., not just first found)')
 
 
 with open('example.txt') as file:
@@ -37,8 +39,10 @@ with open('example.txt') as file:
 			print("Timing, please wait...")
 			total_time = timeit.timeit(
 				'cardParser.getContactInfo(card)', number=iterations, globals=globals())
-			print("Card parsing took ", total_time / iterations, "seconds on average over", iterations, "iterations")
+
+			print("\tCard parsing took ", total_time / iterations,
+				"seconds on average over", iterations, "iterations")
 
 		# attempt to parse the contact info and display
-		contactInfo = cardParser.getContactInfo(card)
+		contactInfo = cardParser.getContactInfo(card, isPrintAll)
 		print(contactInfo, '\n')
