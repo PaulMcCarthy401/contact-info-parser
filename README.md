@@ -29,12 +29,12 @@ python3 -m venv env
    - Linux/Mac `source env/bin/activate`
 
 5. Install dependencies
-```
-pip install -r requirements.txt
-```
-**Important**: Ensure that before installing dependencies (step 5) that you
-have completed step 1 (installing build dependencies). This step
-will fail if that step was not completed.
+   ```
+   pip install -r requirements.txt
+   ```
+   **Important**: Ensure that before installing dependencies (step 5) that you
+   have completed step 1 (installing build dependencies). This step
+   will fail if that step was not completed.
 
 *Generic installation instructions can be found [here](https://spacy.io/usage/#pip)*
 
@@ -94,8 +94,8 @@ as a name. This is masked by the fact that the true name comes before
 The only way to correct this is to use a better model, such as en_core_web_md.
 
 ### Licensing
-  - spaCy: [The MIT License](https://github.com/explosion/spaCy/blob/master/LICENSE)
-  - spaCy models: [CC BY-SA 3.0](https://spacy.io/models/en#en_core_web_sm)
+   - spaCy: [The MIT License](https://github.com/explosion/spaCy/blob/master/LICENSE)
+   - spaCy models: [CC BY-SA 3.0](https://spacy.io/models/en#en_core_web_sm)
 
 ## Examples
 ### Simple example
