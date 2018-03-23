@@ -43,6 +43,9 @@ software could be adapted to run on a server where initial start-up cost
 and memory cost would be negligible. (Likely with a much improved model as well)
 Otherwise, a small, specialized model could be generated specifically for names.
 
+## Usage
+Run `python3 driver.py`
+
 ## Accuracy
 Name recognition is only as good as the NER model behind it. That is why `driver.py`
 allows the user to select a model from the three base models spaCy
