@@ -38,6 +38,8 @@ with open('example.txt') as file:
 	# set up the card parser with a chosen model
 	cardParser = ocrparser.BusinessCardParser(model)
 
+	print("\n=>\n")
+
 	for card in cards:
 		contactInfo = cardParser.getContactInfo(card)
 		print(contactInfo, '\n')
