@@ -16,7 +16,7 @@ The following steps are done via a terminal/command prompt.
    - [macOS/OS X](https://spacy.io/usage/#source-osx)
    - [Windows](https://spacy.io/usage/#source-windows)
    - Fedora `sudo dnf install python-devel git`
-   
+
 2. Pull down the Github repo
    ```
    git clone https://github.com/PaulMcCarthy401/contact-info-parser.git
@@ -110,9 +110,12 @@ Select a spacy model:
         2. en_core_web_md
         3. en_core_web_lg
 1
-
 Would you like to time the parsing? (y/n)
 n
+Show all matches? (i.e., not just first found) (y/n)
+n
+
+Loading model...
 
 =>
 
@@ -130,6 +133,8 @@ Email: bsmith@abctech.com
 ```
 
 ### Timed examples
+
+#### Timed and showing all matches with model en_core_web_sm
 ```
 >> python3 driver.py
 
@@ -146,31 +151,40 @@ How many iterations (higher => more accurate, but slower)
         3. 250
 3
 Show all matches? (i.e., not just first found) (y/n)
-n
+y
 
 Loading model...
 
 =>
 
 Timing, please wait...
-        Card parsing took  0.03341693415785919 seconds on average over 250 iterations
+        Card parsing took  0.03299933907162226 seconds on average over 250 iterations
+- Matched names:  ['John Doe']
+- Matched phone numbers:  ['4105551234']
+- Matched email addresses ['john.doe@entegrasystems.com']
 Name: John Doe
 Phone: 4105551234
 Email: john.doe@entegrasystems.com
 
 Timing, please wait...
-        Card parsing took  0.05683097825850366 seconds on average over 250 iterations
+        Card parsing took  0.056581357824984836 seconds on average over 250 iterations
+- Matched names:  ['Jane Doe']
+- Matched phone numbers:  ['4105551234']
+- Matched email addresses ['Jane.doe@acmetech.com']
 Name: Jane Doe
 Phone: 4105551234
 Email: Jane.doe@acmetech.com
 
 Timing, please wait...
-        Card parsing took  0.07509000430973443 seconds on average over 250 iterations
+        Card parsing took  0.0717529597735072 seconds on average over 250 iterations
+- Matched names:  ['Bob Smith', 'Software Engineer']
+- Matched phone numbers:  ['17035551259']
+- Matched email addresses ['bsmith@abctech.com']
 Name: Bob Smith
 Phone: 17035551259
 Email: bsmith@abctech.com
 ```
-
+#### Timed and showing all matches with model en_core_web_md
 ```
 >> python3 driver.py
 
@@ -187,26 +201,35 @@ How many iterations (higher => more accurate, but slower)
         3. 250
 3
 Show all matches? (i.e., not just first found) (y/n)
-n
+y
 
 Loading model...
 
 =>
 
 Timing, please wait...
-        Card parsing took  0.03542762526974251 seconds on average over 250 iterations
+        Card parsing took  0.03451846540676288 seconds on average over 250 iterations
+- Matched names:  ['John Doe']
+- Matched phone numbers:  ['4105551234']
+- Matched email addresses ['john.doe@entegrasystems.com']
 Name: John Doe
 Phone: 4105551234
 Email: john.doe@entegrasystems.com
 
 Timing, please wait...
-        Card parsing took  0.061214357689521416 seconds on average over 250 iterations
+        Card parsing took  0.056735126486736745 seconds on average over 250 iterations
+- Matched names:  ['Jane Doe']
+- Matched phone numbers:  ['4105551234']
+- Matched email addresses ['Jane.doe@acmetech.com']
 Name: Jane Doe
 Phone: 4105551234
 Email: Jane.doe@acmetech.com
 
 Timing, please wait...
-        Card parsing took  0.07871967853427034 seconds on average over 250 iterations
+        Card parsing took  0.07317037637579248 seconds on average over 250 iterations
+- Matched names:  ['Bob Smith']
+- Matched phone numbers:  ['17035551259']
+- Matched email addresses ['bsmith@abctech.com']
 Name: Bob Smith
 Phone: 17035551259
 Email: bsmith@abctech.com
