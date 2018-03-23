@@ -17,7 +17,7 @@ class ContactInfo:
 		Email: <emailAddress>
 		"""
 		return "Name: {}\nPhone: {}\nEmail: {}".format(
-			self.name, self.phoneNumber, self.emailAddress
+			self.getName(), self.getPhoneNumber(), self.getEmailAddress()
 		)
 	
 	def getName(self):
