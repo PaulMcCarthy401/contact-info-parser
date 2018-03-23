@@ -75,24 +75,28 @@ class BusinessCardParser:
 		Returns:
 			ContactInfo
 		"""
-		name = None
-		phoneNumber = None
-		emailAddress = None
+		names = []
+		phoneNumbers = []
+		emailAddresses = []
 
-		# parse each line for contact info, saving the first
-		# match if one is found.
+		# parse through document line by line
+		# and gather possible contact info fragments
 		for line in document.split('\n'):
 			matchedName = self.getName(line)
 			if matchedName:
-				name = matchedName
+				names.append(matchedName)
 
 			matchedPhoneNumber = self.getPhoneNumber(line)
 			if matchedPhoneNumber:
-				phoneNumber = matchedPhoneNumber
+				phoneNumbers.append(matchedPhoneNumber)
 
 			matchedEmailAddress = self.getEmailAddress(line)
 			if matchedEmailAddress:
-				emailAddress = matchedEmailAddress
+				emailAddresses.append(matchedEmailAddress)
 		
-		return ContactInfo(name, phoneNumber, emailAddress)
+		# print("Matched names: ", names)
+		# print("Matched phone numbers: ", phoneNumbers)
+		# print("Matched email addresses", emailAddresses)
+		
+		return ContactInfo(names[0], phoneNumbers[0], emailAddresses[0])
 		
