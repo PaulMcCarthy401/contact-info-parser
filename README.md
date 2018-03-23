@@ -23,8 +23,8 @@ a version of the Visual C++ Build Tools and the Windows 10 SDK.
 More info about compiler dependencies due to spaCy
 can be found [here](https://spacy.io/usage/#source-windows)
 
-  Python 3.4 -> Visual Studio 2010
-  Python 3.5+ -> Visual Studio 2015
+  - Python 3.4 -> Visual Studio 2010
+  - Python 3.5+ -> Visual Studio 2015
 
 Generic installation instructions can be found [here](https://spacy.io/usage/#pip)
 
