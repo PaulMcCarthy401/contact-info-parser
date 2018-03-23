@@ -40,7 +40,8 @@ The following steps are done via a terminal/command prompt.
    have completed step 1 (installing build dependencies). This step
    will fail if that step was not completed.
 
-*Generic installation instructions can be found [here](https://spacy.io/usage/#pip)*
+   *Generic installation instructions can be found [here](https://spacy.io/usage/#pip)*
+   *since spaCy is the only dependency.*
 
 6. Choose a model
    - Small:  `python3 -m spacy download en_core_web_sm`
